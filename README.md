@@ -164,7 +164,7 @@ $ ls
  
 ### 2. Make a metadata file that will instruct our script to run on our tester fastq files only
  
-Within your 01_input directory, make sure you have a metadata file. For more instructions on this process --> 
+Within your 01_input directory, make sure you have a metadata file. For more instructions on this process --> [Automation I](https://rna.colostate.edu/2023/doku.php?id=wiki:automation)
  
 ### 3. Modify the **execute** script
 
