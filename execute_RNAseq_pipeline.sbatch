@@ -6,7 +6,6 @@
 #SBATCH --time=04:00:00                    # modify this number to reflect how much time to request
 #SBATCH --partition=amilan                 # modify this to reflect which queue you want to use.
 #SBATCH --mail-type=END                    # Keep these two lines of code if you want an e-mail sent to you when it is complete.
-#SBATCH --mail-user=<eID>@colostate.edu    # add your e-mail here
 #SBATCH --mail-user=<youremail>             # add your e-mail here
 #SBATCH --output=log-RNAseqpipe-%j.out     # this will capture all output in a logfile with %j as the job #
 
