@@ -23,11 +23,11 @@ You will be able to tailor these templates to your own purposes for future use a
 
   * Locate the green **code** button on the top right of this page. Click it.
   * Click on the clipboard icon. This will save a github URL address to your clipboard.
-  * Switch over to JupyterHub linked to SUMMIT.
-  * Navigate into your directory for `PROJ01_GomezOrte/02_scripts` and use `git clone` as shown below to pull the information from github to your location on SUMMIT.
+  * Switch over to JupyterHub linked to ALPINE.
+  * Navigate into your directory for `PROJ01_GomezOrte/02_scripts` and use `git clone` as shown below to pull the information from github to your location on ALPINE.
   
 ```bash
-$ cd /scratch/summit/<eID>@colostate.edu    #Replace <eID> with your EID
+$ cd /scratch/alpine/<eID>@colostate.edu    #Replace <eID> with your EID
 $ cd PROJ01_GomezOrte
 $ cd 02_scripts
 $ git clone <paste path to github repository here>
@@ -35,7 +35,7 @@ $ git clone <paste path to github repository here>
 
 **Explore what you obtained.**
 
-Notice that instead of having a single script, you now have a few scripts. These will work in a **Two step** method for executing jobs on summit. The `execute` script calls the `analyze` script. This Readme file and a license file were also downloaded.
+Notice that instead of having a single script, you now have a few scripts. These will work in a **Two step** method for executing jobs on ALPINE. The `execute` script calls the `analyze` script. This Readme file and a license file were also downloaded.
 
 Let's copy the two scripts up one directory. This will create duplicate copies for you to edit on and will move the scripts directly into ''02_scripts'', not its sub-directory.
 
@@ -80,8 +80,8 @@ Now, we COULD execute the RNA_seq analyzer pipeline that way, but there is a pro
 The **execute_RNAseq_pipeline.sbatch** script will be used to submit the analyze script to the **job batch manager** called **SLURM**. This will put your analyze script in the queue and specify how it should be run on the supercomputer system.
 
 For more background on SLURM:
-  * [JOB SUBMISSIONS ON SUMMIT](https://curc.readthedocs.io/en/latest/running-jobs/batch-jobs.html)
-  * [SLURM ON SUMMIT - FAQ](https://curc.readthedocs.io/en/latest/faq.html)
+  * [JOB SUBMISSIONS ON ALPINE](https://curc.readthedocs.io/en/latest/running-jobs/batch-jobs.html)
+  * [SLURM ON ALPINE - FAQ](https://curc.readthedocs.io/en/latest/faq.html)
   * [SLURM DOCUMENTATION](https://slurm.schedmd.com/sbatch.html)
 
 To execute the bash script, we will do the following...
@@ -90,7 +90,7 @@ To execute the bash script, we will do the following...
 $ sbatch execute_RNAseq_pipeline.sbatch
 ```
 
-By doing this, the **execute** script will submit the **analyzer** script to **SLURM**. This will ensure the **analyzer** script is run at the proper time and with the requested resources on compute nodes on the SUMMIT system. What is SLURM? Slurm is a job scheduling system for large and small Linux clusters. It puts your job into a 'queue'. When the resources you have requested are available, your job will begin. SLURM is organized so that different users have different levels of priority in the queue. On SUMMIT, users who use fewer resources have higher priority. Power users have less priority and are encouraged to purchase greater access to the system if it is a problem.
+By doing this, the **execute** script will submit the **analyzer** script to **SLURM**. This will ensure the **analyzer** script is run at the proper time and with the requested resources on compute nodes on the ALPINE system. What is SLURM? Slurm is a job scheduling system for large and small Linux clusters. It puts your job into a 'queue'. When the resources you have requested are available, your job will begin. SLURM is organized so that different users have different levels of priority in the queue. On ALPINE, users who use fewer resources have higher priority. Power users have less priority and are encouraged to purchase greater access to the system if it is a problem.
 
 Let's open **execute_RNAseq_pipeline.sbatch** in an editor window and explore how it works. 
 
