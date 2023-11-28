@@ -136,12 +136,12 @@ $ sbatch execute_RNAseq_pipeline.sbatch
 ```
 
 ----
-## In Class Exercise - modify and run your pipeline
+## Instructions - How to Modify & Run this Pipeline
  
 Let's try this out. Follow along to test the scripts. Here's the plan...
  
-1. Ensure you have some tester fastq files in your 01_input folder
-2. Make a short test_metadata.txt file that will instruct our script to run on our tester fastq files only.
+1. Ensure you have some fastq files in your 01_input folder
+2. Create a metadata file
 3. Modify the **execute** script
 4. Modify the **analyzer** script
 5. Run the scripts
@@ -149,28 +149,20 @@ Let's try this out. Follow along to test the scripts. Here's the plan...
 ----
  
 
-### 1. Ensure you have some tester fastq files already generated in your `01_input` folder
+### 1. Ensure you have some fastq files in your `01_input` folder
 
-Let's make sure you have two tester .fastq files. These are files we made last time by subsetting the larger files.
+Let's make sure you have .fastq files. These are files we made last time by subsetting the larger files. For more instructions on this process --> [Data Acquisition](https://rna.colostate.edu/2022/doku.php?id=wiki:dataacquisition)
  
 ```bash
 # Navigate to the input directory (using cd ../01_input)
 $ pwd
 ~/01_input
 
-# check you have some tester files
-$ ls tester*.fastq
-tester_SRR5832182_1.fastq
-tester_SRR5832182_2.fastq
-tester_SRR5832183_1.fastq
-tester_SRR5832183_2.fastq
+$ ls
 ```
-
-:warning: **WARNING** if you don't have those files, copy the lines of code from [Preprocessing and Quality Control](https://rna.colostate.edu/2021/doku.php?id=wiki:preprocessingqc2) that start with the head command. 
  
  
- 
-### 2. Make a short test_metadata.txt file that will instruct our script to run on our tester fastq files only
+### 2. Make a metadata file that will instruct our script to run on our tester fastq files only
  
 Within your 01_input directory, make a quick `test_metadata.txt` file by copying and pasting the following content into a new file:
  
