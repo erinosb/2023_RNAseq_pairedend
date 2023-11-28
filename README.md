@@ -143,9 +143,9 @@ Let's try this out. Follow along to test the scripts. Here's the plan...
 1. Ensure you have some fastq files in your 01_input folder
 2. Create a metadata file
 3. Gather the genome files you'll need
-   a. Download your genome (.fasta files)
-   b. Build an index out of your genome (.ht2 files)
-   c. Download (or obtain) an annotation file (.gtf or .gff)
+   - Download your genome (.fasta files)
+   - Build an index out of your genome (.ht2 files)
+   - Download (or obtain) an annotation file (.gtf or .gff)
 5. Modify the **execute** script
 6. Modify the **analyzer** script. Point it to the genome, index, .gtf, input folder, and .fastq files
 7. Run the scripts
