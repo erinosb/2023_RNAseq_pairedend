@@ -2,7 +2,7 @@
 
 ################################################
 # PROGRAM:
-# RNAseq_analyzer_221126.sh
+# analyze_RNAseq_231126.sh
 #
 # DESCRIPTION:
 # This is a very basic RNA-seq pipeline that I use for analyzing fastq reads. Step1 is a
@@ -15,7 +15,7 @@
 # <yournamehere>
 #
 # START DATE:
-# November 26, 2022
+# November 26, 2023
 #
 # DEPENDENCIES:
 # 	Requires the installation of the follwing software: 
@@ -52,7 +52,7 @@
 #								sequence (.fa above).
 #
 # USAGE:
-# $ bash RNAseq_analyzer_221126.sh <metadata.txt> <number of threads>
+# $ bash analyze_RNAseq_231126.sh <metadata.txt> <number of threads>
 #
 # OUTPUT:
 #
@@ -66,19 +66,19 @@
 ####### MODIFY THIS SECTION #############
 
 #The input samples live in directory:
-inputdir="<yourinputdir>"
+inputdir="../01_input"
 
 #Metadata file. This pulls the metadata path and file from the command line
 metadata=$1
 
 #This is where the ht2 files live:
-hisat2path="<hisatpath/previx>"
+hisat2path="/pl/active/onishimura_lab/ERIN/COURSES/2023_test/PROJ02_ce11_IndexBuild/ce11"
 
 #This is where the genome sequence lives:
-genomefa="<genome.fa>"
+genomefa="/pl/active/onishimura_lab/ERIN/COURSES/2023_test/PROJ02_ce11_IndexBuild/ce11_wholegenome.fa"
 
 #This is where the gtf file lives:
-gtffile="<annotation.gtf>"
+gtffile="/pl/active/onishimura_lab/ERIN/COURSES/2023_test/PROJ02_ce11_IndexBuild/ce11_annotation_ensembl_to_ucsc.gtf"
 
 #This is the output_directory:
 DATE=`date +%Y-%m-%d`
