@@ -146,9 +146,9 @@ Let's try this out. Follow along to test the scripts. Here's the plan...
    - Download your genome (.fasta files)
    - Build an index out of your genome (.ht2 files)
    - Download (or obtain) an annotation file (.gtf or .gff)
-5. Modify the **execute** script
-6. Modify the **analyzer** script. Point it to the genome, index, .gtf, input folder, and .fastq files
-7. Run the scripts
+4. Modify the **execute** script
+5. Modify the **analyzer** script. Point it to the genome, index, .gtf, input folder, and .fastq files
+6. Run the scripts
  
 ----
  
@@ -172,13 +172,13 @@ Within your 01_input directory, make sure you have a metadata file. For more ins
  
 ### 3. Gather the genome files you'll need
 
-   a. Download your genome (.fasta files)
-   b. Build an index out of your genome (.ht2 files)
-   c. Download (or obtain) an annotation file (.gtf or .gff)
+   - Download your genome (.fasta files)
+   - Build an index out of your genome (.ht2 files)
+   - Download (or obtain) an annotation file (.gtf or .gff)
 
 We'll work through these steps in the next section --> [Building Indexes](https://rna.colostate.edu/2023/doku.php?id=wiki:hisat2build)
 
-Modify the **execute** script
+### 4. Modify the **execute** script
 
   - Great! 
   - Next, we'll navigate over to our scripts directory.
@@ -193,7 +193,7 @@ Modify the **execute** script
  bash analyze_RNAseq_231126.sh ../01_input/metadata_gomezOrte.txt  $SLURM_NTASKS
 ```
  
-### 4. Modify the **analyzer** script
+### 5. Modify the **analyzer** script
 
   - Awesome!
   - Next, we'll modify the script **analyze_RNAseq_231126.sh**
@@ -221,7 +221,7 @@ gtffile="../01_input/ce11_annotation.gtf"
 
 ```
 
- ### 5. Run the scripts
+ ### 6. Run the scripts
  
    - Simply run the scripts by executing:
 
