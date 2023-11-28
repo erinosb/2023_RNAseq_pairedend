@@ -67,7 +67,7 @@ Let's briefly peek into it and see that it contains.
 The way this script works, we (as the user) modify the MODIFY THIS SECTION part, then when we run the script, we give it a metadata file as its first argument. We can execute the analyzer script like so...
 
 ```bash
-$ bash RNAseq_analyzer_221126.sh ../01_input/metadatafile.txt
+$ bash RNAseq_analyzer_231126.sh ../01_input/metadatafile.txt
 ```
 
 This will take a metadata file as input and loop over the content within that metadata file. It will pull the names of the .fastq file names to process from the first and second column of the metadata file and start processing them one at a time. It will name them by the 'short nickname' in the third column.
@@ -164,12 +164,7 @@ $ ls
  
 ### 2. Make a metadata file that will instruct our script to run on our tester fastq files only
  
-Within your 01_input directory, make a quick `test_metadata.txt` file by copying and pasting the following content into a new file:
- 
-```
-tester_SRR5832182_1.fastq	tester_SRR5832182_2.fastq	EG01	01_Ecoli_15_1	Ecoli	15	1
-tester_SRR5832183_1.fastq	tester_SRR5832183_2.fastq	EG02	01_Ecoli_15_1	Ecoli	15	2 
- ```
+Within your 01_input directory, make sure you have a metadata file. For more instructions on this process --> 
  
 ### 3. Modify the **execute** script
 
@@ -225,8 +220,9 @@ $ sbatch execute_RNAseq_pipeline.sbatch
    - Check on your script using:
 
 ```bash
-$ squeue -u $USER
-$ more log_RNAseq_pipe*
+$ scheck
+$ more <logfile>
+$ tail <logfile>
 ```
 
 Did it work?
