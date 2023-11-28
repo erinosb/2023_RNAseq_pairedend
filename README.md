@@ -142,14 +142,18 @@ Let's try this out. Follow along to test the scripts. Here's the plan...
  
 1. Ensure you have some fastq files in your 01_input folder
 2. Create a metadata file
-3. Modify the **execute** script
-4. Modify the **analyzer** script
-5. Run the scripts
+3. Gather the genome files you'll need
+   a. Download your genome (.fasta files)
+   b. Build an index out of your genome (.ht2 files)
+   c. Download (or obtain) an annotation file (.gtf or .gff)
+5. Modify the **execute** script
+6. Modify the **analyzer** script. Point it to the genome, index, .gtf, input folder, and .fastq files
+7. Run the scripts
  
 ----
  
 
-### 1. Ensure you have some fastq files in your `01_input` folder
+### 1. Ensure you have some fastq files in your 01_input folder
 
 Let's make sure you have .fastq files. These are files we made last time by subsetting the larger files. For more instructions on this process --> [Data Acquisition](https://rna.colostate.edu/2022/doku.php?id=wiki:dataacquisition)
  
@@ -162,11 +166,19 @@ $ ls
 ```
  
  
-### 2. Make a metadata file that will instruct our script to run on our tester fastq files only
+### 2. Create a metadata file
  
 Within your 01_input directory, make sure you have a metadata file. For more instructions on this process --> [Automation I](https://rna.colostate.edu/2023/doku.php?id=wiki:automation)
  
-### 3. Modify the **execute** script
+### 3. Gather the genome files you'll need
+
+   a. Download your genome (.fasta files)
+   b. Build an index out of your genome (.ht2 files)
+   c. Download (or obtain) an annotation file (.gtf or .gff)
+
+We'll work through these steps in the next section --> [Building Indexes](https://rna.colostate.edu/2023/doku.php?id=wiki:hisat2build)
+
+Modify the **execute** script
 
   - Great! 
   - Next, we'll navigate over to our scripts directory.
@@ -178,14 +190,14 @@ Within your 01_input directory, make sure you have a metadata file. For more ins
   - Mine looks like:
 
 ```bash
- bash RNAseq_analyzer_221126.sh ../01_input/test_metadata.txt  $SLURM_NTASKS
+ bash analyze_RNAseq_231126.sh ../01_input/metadata_gomezOrte.txt  $SLURM_NTASKS
 ```
  
 ### 4. Modify the **analyzer** script
 
   - Awesome!
-  - Next, we'll modify the script **RNAseq_analyzer_221126.sh**
-  - Open the **RNAseq_analyzer_221126.sh** in a text editor window.
+  - Next, we'll modify the script **analyze_RNAseq_231126.sh**
+  - Open the **analyze_RNAseq_231126.sh** in a text editor window.
   - Within the MODIFY THIS SECTION part of the code, replace <yourinputdir> with a path to your input directory. 
   - Within the MODIFY THIS SECTION part of the code, replace <hisatpath/prefix> with the path to your hisat2 indexes and the prefix for your hisat2 indexes.
   - Mine ended up looking like:
