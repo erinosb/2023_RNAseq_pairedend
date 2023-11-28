@@ -40,8 +40,8 @@ Notice that instead of having a single script, you now have a few scripts. These
 Let's copy the two scripts up one directory. This will create duplicate copies for you to edit on and will move the scripts directly into ''02_scripts'', not its sub-directory.
 
 ```bash
-$ cd 2022_DSCI512_RNAseq_pairedend
-$ cp RNAseq_analyzer_221126.sh ..
+$ cd 2023_RNAseq_pairedend
+$ cp analyze_RNAseq_231126.sh ..
 $ cp execute_RNAseq_pipeline.sbatch ..
 $ cd ..
 ```
@@ -50,18 +50,18 @@ $ cd ..
 ## Let's explore the RNAseqAnalyzer Script 
 
 
-The **RNAseq_analyzer_221126.sh** script contains our pipeline. 
+The **analyze_RNAseq_231126.sh** script contains our pipeline. 
 
 Let's briefly peek into it and see that it contains. 
-  * Open **RNAseq_analyzer_221126.sh** in an editor window. You'll notice the following sections.
+  * Open **analyze_RNAseq_231126.sh** in an editor window. You'll notice the following sections.
 
 **The pipeline**
   * A shebang
   * A long comment section with documentation on its use
   * MODIFY THIS SECTION - *you will tailor this section to each job*
   * BEGIN CODE - *the code starts and reports how it is running*
-  * META DATA - *this part pulls information out of the metadata file to create bash arrays*
-  * PIPELINE - *right now this contains a for loop that will execute fastp. We will add onto this section each class*
+  * METADATA - *this part pulls information out of the metadata file to create bash arrays*
+  * PIPELINE - *right now this contains a loop that will execute fastp (preprocessing), a loop to execute hisat2 (alignment), a single line of code for featureCounts, and a number of file format conversion steps.*
   * VERSIONS - *this prints out the versions of software used for your future methods section*
 
 The way this script works, we (as the user) modify the MODIFY THIS SECTION part, then when we run the script, we give it a metadata file as its first argument. We can execute the analyzer script like so...
