@@ -66,19 +66,19 @@
 ####### MODIFY THIS SECTION #############
 
 #The input samples live in directory:
-inputdir="../01_input"
+inputdir="<yourinputdir>"
 
 #Metadata file. This pulls the metadata path and file from the command line
 metadata=$1
 
 #This is where the ht2 files live:
-hisat2path="/pl/active/onishimura_lab/ERIN/COURSES/2023_test/PROJ02_ce11_IndexBuild/ce11"
+hisat2path="<hisatpath/previx>"
 
 #This is where the genome sequence lives:
-genomefa="/pl/active/onishimura_lab/ERIN/COURSES/2023_test/PROJ02_ce11_IndexBuild/ce11_wholegenome.fa"
+genomefa="<genome.fa>"
 
 #This is where the gtf file lives:
-gtffile="/pl/active/onishimura_lab/ERIN/COURSES/2023_test/PROJ02_ce11_IndexBuild/ce11_annotation_ensembl_to_ucsc.gtf"
+gtffile="<annotation.gtf>"
 
 #This is the output_directory:
 DATE=`date +%Y-%m-%d`
