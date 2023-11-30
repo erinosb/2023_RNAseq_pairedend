@@ -148,6 +148,7 @@ Let's try this out. Follow along to test the scripts. Here's the plan...
 4. Modify the **execute** script
 5. Modify the **analyzer** script. Point it to the genome, index, .gtf, input folder, and .fastq files
 6. Run the scripts
+7. Clean up the project
  
 ----
  
@@ -241,8 +242,31 @@ Did it work?
   - If it worked, you should have a directory in your output file labeled with today's date.
   - Within that output directory, you should have folders for different steps of the pipeline `01_fastp`, `02_hisat2`, etc. 
   - Within the first two sub-directories, you should have files corresponding to samples EG01 and EG02. 
-  - The code will likely have only progressed as far as the hisat2 step. 
- 
+  - The code will likely have only progressed as far as the hisat2 step.
+
+### 7. Clean up the project
+
+I included a script that automates the process of compressing files and deleting temp files. This is located in the same directory you cloned from github. To use this script:
+
+ - Copy the cleanup script RNAseq_cleanup_231126.sh into the 02_scripts directory (move it one directory up).
+ - Modify the “Modify this Section” part of the clean script.
+ - Modify the execute_RNAseq_pipeline.sbatch script to 1) comment out ~Line22, the one that runs the RNAseq_analyzer script, 2) remove the commenting from ~Line26 that runs the cleanup script, and 3) add the metadata path to ~Line26
+ - It should look like this:
+   
+```
+## Execute the RNA-seq_pipeline to run the pipeline
+#bash RNAseq_analyzer_231126.sh ../01_input/test_metadata.txt  $SLURM_NTASKS
+
+## Execute the cleanup script to zip .fastq files and delete extra files
+bash RNAseq_cleanup_221126.sh ../01_input/test_metadata.txt
+```
+
+Again, run with:
+
+```
+$ sbatch execute_RNAseq_pipeline.sbatch
+```
+
 
 Thanks!
  
