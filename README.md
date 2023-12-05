@@ -270,4 +270,5 @@ $ sbatch execute_RNAseq_pipeline.sbatch
 
 Thanks!
  
- [To Alignment](https://rna.colostate.edu/2022/doku.php?id=wiki:introalignment)
+ [To Alignment](https://rna.colostate.edu/2023/doku.php?id=wiki:introalignment)
+
